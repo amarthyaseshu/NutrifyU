@@ -3,100 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutrifyU - Your Nutrition Guide</title>
+    <title>NutrifyU - Centered Search + Enhanced Borders</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Main Header Section -->
-    <header class="header">
-        <div class="container">
-            <h1 class="main-title">🥗 NutrifyU</h1>
-            <p class="subtitle">Your Complete Nutrition and Wellness Guide</p>
-        </div>
-    </header>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="header__title">🌿 NutrifyU</h1>
+            <p class="header__subtitle">Track your nutrition with vitamins and minerals</p>
+        </header>
 
-    <!-- Main Content Container -->
-    <main class="main-content">
-        <div class="container">
-            
-            <!-- Control Buttons Section -->
-            <section class="controls-section">
-                <h2>Track Your Nutrition & Wellness</h2>
-                <div class="control-buttons">
-                    <button id="foodsBtn" class="btn btn--primary control-btn">
-                        🍽️ Foods Consumed
-                    </button>
-                    <!-- Activity button starts RED (matching red Activity card) -->
-                    <button id="activityBtn" class="btn btn--secondary control-btn btn-activity-red">
-                        🏃 Activity
-                    </button>
-                    <!-- Stress button starts GREEN (matching green Stress card) -->
-                    <button id="stressBtn" class="btn btn--outline control-btn btn-stress-green">
-                        😰 Stress
-                    </button>
-                </div>
-                
-                <!-- Food Input Section (Initially Hidden) -->
-                <div id="foodInputSection" class="food-input-section hidden">
-                    <div class="input-container">
-                        <label for="foodInput" class="form-label">Enter foods you consumed today (comma-separated):</label>
+        <!-- Centered Food Analysis Section -->
+        <section class="analysis-section-wrapper">
+            <div class="analysis-section">
+                <div class="analysis-input-container">
+                    <div class="analysis-input-group">
                         <input 
                             type="text" 
                             id="foodInput" 
-                            class="form-control" 
-                            placeholder="e.g., spinach, almonds, oranges, milk"
+                            class="form-control analysis-input" 
+                            placeholder="Enter foods separated by commas (e.g., spinach, almonds, oranges)"
+                            autocomplete="off"
                         >
-                        <button id="submitFoods" class="btn btn--primary mt-8">
-                            ✅ Check Vitamins
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Vitamin Cards Grid Section -->
-            <section class="vitamins-section">
-                <h2>Essential Vitamins</h2>
-                <div id="vitaminsGrid" class="vitamins-grid">
-                    <!-- Vitamin cards will be dynamically generated here -->
-                </div>
-            </section>
-
-            <!-- Wellness Indicators Section -->
-            <section class="wellness-section">
-                <h2>Wellness Indicators</h2>
-                <div class="wellness-grid">
-                    <!-- Stress Indicator Card -->
-                    <div id="stressCard" class="wellness-card stress-card default-green">
-                        <div class="wellness-icon">😌</div>
-                        <h3>Stress Indicator</h3>
-                        <p>Monitor your stress levels for better health</p>
-                        <div class="status-indicator">
-                            <span class="status-text">Relaxed</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Activity Indicator Card -->
-                    <div id="activityCard" class="wellness-card activity-card default-red">
-                        <div class="wellness-icon">🏃</div>
-                        <h3>Activity Indicator</h3>
-                        <p>Track your daily physical activity</p>
-                        <div class="status-indicator">
-                            <span class="status-text">Inactive</span>
+                        <div class="analysis-buttons">
+                            <button id="analyzeBtn" class="btn btn--primary analysis-btn">
+                                <span class="btn-gradient"></span>
+                                Analyze Nutrition
+                            </button>
+                            <button id="resetBtn" class="btn btn--secondary analysis-btn">
+                                <span class="btn-gradient"></span>
+                                Reset
+                            </button>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-    </main>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 NutrifyU - Supporting Your Health Journey</p>
-        </div>
-    </footer>
+                <!-- Circular Percentage Indicator -->
+                <div class="percentage-indicator">
+                    <div class="percentage-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle 
+                                class="progress-ring__circle-bg" 
+                                stroke="var(--color-border)" 
+                                stroke-width="10" 
+                                fill="transparent" 
+                                r="60" 
+                                cx="70" 
+                                cy="70"
+                            />
+                            <circle 
+                                class="progress-ring__circle" 
+                                stroke="var(--color-primary)" 
+                                stroke-width="10" 
+                                fill="transparent" 
+                                r="60" 
+                                cx="70" 
+                                cy="70"
+                                stroke-dasharray="377"
+                                stroke-dashoffset="377"
+                                transform="rotate(-90 70 70)"
+                            />
+                        </svg>
+                        <div class="percentage-text">
+                            <span class="percentage-value">0%</span>
+                            <span class="percentage-label">Coverage</span>
+                        </div>
+                    </div>
+                    <div class="coverage-details">
+                        <div class="coverage-item">
+                            <span class="coverage-count" id="vitaminCount">0/13</span>
+                            <span class="coverage-type">Vitamins</span>
+                        </div>
+                        <div class="coverage-item">
+                            <span class="coverage-count" id="mineralCount">0/8</span>
+                            <span class="coverage-type">Minerals</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- JavaScript -->
+        <!-- Vitamins Section -->
+        <section class="nutrients-section">
+            <h2 class="section-title">
+                <span class="section-title-gradient">Vitamins</span>
+            </h2>
+            <div class="nutrient-grid" id="vitaminGrid">
+                <!-- Vitamin cards will be dynamically generated -->
+            </div>
+        </section>
+
+        <!-- Minerals Section -->
+        <section class="nutrients-section">
+            <h2 class="section-title">
+                <span class="section-title-gradient">Minerals</span>
+            </h2>
+            <div class="nutrient-grid" id="mineralGrid">
+                <!-- Mineral cards will be dynamically generated -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 NutrifyU. Track your nutrition journey with comprehensive vitamin and mineral analysis.</p>
+        </footer>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>

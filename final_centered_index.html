@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutrifyU - Final Enhanced Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">🌿 NutrifyU</h1>
+            <p class="subtitle">Your Personal Vitamin & Mineral Tracker</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Centered Controls Section -->
+            <section class="controls-section">
+                <h2>Food Analysis</h2>
+
+                <div class="centered-input-container">
+                    <input type="text" 
+                           id="foodInput" 
+                           class="form-control" 
+                           placeholder="Enter food items (e.g., spinach, almonds, oranges...)"
+                           autocomplete="off">
+                    <div class="button-group">
+                        <button id="analyzeBtn" class="btn btn--primary control-btn">
+                            🔍 Analyze Nutrition
+                        </button>
+                        <button id="resetBtn" class="btn btn--outline control-btn">
+                            🔄 Reset All
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Percentage Indicator Section -->
+            <section class="percentage-section">
+                <div class="percentage-container">
+                    <div class="percentage-circle">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring__circle-bg" 
+                                    cx="70" cy="70" r="60" 
+                                    fill="transparent" 
+                                    stroke="#e5e5e5" 
+                                    stroke-width="10"/>
+                            <circle class="progress-ring__circle" 
+                                    cx="70" cy="70" r="60" 
+                                    fill="transparent" 
+                                    stroke="#10B981" 
+                                    stroke-width="10" 
+                                    stroke-linecap="round"/>
+                        </svg>
+                        <div class="percentage-text">
+                            <span class="percentage-number">0</span>
+                            <span class="percentage-symbol">%</span>
+                            <span class="percentage-label">Coverage</span>
+                        </div>
+                    </div>
+                    <div class="coverage-details">
+                        <div class="coverage-item">
+                            <span class="coverage-count" id="vitaminsCovered">0</span>
+                            <span class="coverage-total"> / 13 Vitamins</span>
+                        </div>
+                        <div class="coverage-item">
+                            <span class="coverage-count" id="mineralsCovered">0</span>
+                            <span class="coverage-total"> / 8 Minerals</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vitamins Section -->
+            <section class="vitamins-section">
+                <h2>Essential Vitamins</h2>
+                <div class="nutrition-grid" id="vitaminsContainer">
+                    <!-- Vitamin cards will be dynamically generated here -->
+                </div>
+            </section>
+
+            <!-- Minerals Section -->
+            <section class="minerals-section">
+                <h2>Essential Minerals</h2>
+                <div class="nutrition-grid" id="mineralsContainer">
+                    <!-- Mineral cards will be dynamically generated here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 NutrifyU. Track your nutrition, enhance your health.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

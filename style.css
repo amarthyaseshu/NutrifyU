@@ -738,679 +738,695 @@ select.form-control {
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
-/* Custom styles for NutrifyU - Built on top of the design system */
-
-/* ================================
-   GLOBAL STYLES & BACKGROUND
-   ================================ */
-
-body {
-    /* Health-themed gradient background using design system colors */
-    background: linear-gradient(135deg, 
-        var(--color-bg-3) 0%,     /* Light green */
-        var(--color-bg-1) 50%,    /* Light blue */
-        var(--color-bg-8) 100%    /* Light cyan */
-    );
+/* Enhanced App Container */
+.app-container {
     min-height: 100vh;
-    font-family: var(--font-family-base);
+    background: var(--color-background);
+    position: relative;
 }
 
-/* Main container for consistent max-width and centering */
-.main-content {
-    padding: var(--space-32) 0;
-}
-
-/* ================================
-   HEADER SECTION
-   ================================ */
-
+/* Header Styles */
 .header {
-    background: rgba(var(--color-teal-500-rgb), 0.1);
-    border-bottom: 2px solid var(--color-primary);
-    padding: var(--space-24) 0;
     text-align: center;
-}
-
-.main-title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-primary);
-    margin-bottom: var(--space-8);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.subtitle {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
-    margin: 0;
-}
-
-/* ================================
-   CONTROL BUTTONS SECTION
-   ================================ */
-
-.controls-section {
-    margin-bottom: var(--space-32);
-    padding: var(--space-24);
-    background: var(--color-surface);
+    padding: var(--space-32) 0;
+    margin-bottom: var(--space-24);
+    background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-3));
     border-radius: var(--radius-lg);
+    margin: var(--space-16) var(--space-16) var(--space-32) var(--space-16);
     border: 1px solid var(--color-card-border);
     box-shadow: var(--shadow-md);
 }
 
-.controls-section h2 {
-    text-align: center;
-    margin-bottom: var(--space-24);
+.header__title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
     color: var(--color-text);
+    margin-bottom: var(--space-8);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-teal-700));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.control-buttons {
+.header__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* PERFECTLY CENTERED Analysis Section Wrapper */
+.analysis-section-wrapper {
     display: flex;
     justify-content: center;
-    gap: var(--space-16);
-    flex-wrap: wrap;
-    margin-bottom: var(--space-16);
+    align-items: center;
+    padding: 0 var(--space-16);
+    margin-bottom: var(--space-32);
+    width: 100%;
 }
 
-.control-btn {
-    padding: var(--space-12) var(--space-24);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-medium);
-    min-width: 150px;
-    transition: all var(--duration-normal) var(--ease-standard);
-}
-
-.control-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* ================================
-   BUTTON COLOR SYNCHRONIZATION
-   Button colors match their respective card colors
-   ================================ */
-
-/* Activity Button Color States - Synchronizes with Activity card */
-.btn-activity-red {
-    background: rgba(var(--color-error-rgb), 0.9) !important;
-    color: var(--color-btn-primary-text) !important;
-    border: 2px solid var(--color-error) !important;
-}
-
-.btn-activity-red:hover {
-    background: var(--color-error) !important;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.btn-activity-green {
-    background: rgba(var(--color-success-rgb), 0.9) !important;
-    color: var(--color-btn-primary-text) !important;
-    border: 2px solid var(--color-success) !important;
-}
-
-.btn-activity-green:hover {
-    background: var(--color-success) !important;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Stress Button Color States - Synchronizes with Stress card */
-.btn-stress-green {
-    background: rgba(var(--color-success-rgb), 0.9) !important;
-    color: var(--color-btn-primary-text) !important;
-    border: 2px solid var(--color-success) !important;
-}
-
-.btn-stress-green:hover {
-    background: var(--color-success) !important;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.btn-stress-red {
-    background: rgba(var(--color-error-rgb), 0.9) !important;
-    color: var(--color-btn-primary-text) !important;
-    border: 2px solid var(--color-error) !important;
-}
-
-.btn-stress-red:hover {
-    background: var(--color-error) !important;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Food Input Section Styling */
-.food-input-section {
-    margin-top: var(--space-24);
-    padding: var(--space-20);
-    background: var(--color-bg-2);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-border);
-}
-
-.input-container {
+.analysis-section {
+    background: linear-gradient(135deg, var(--color-surface), var(--color-bg-1));
+    border-radius: var(--radius-lg);
+    padding: var(--space-32);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
     max-width: 600px;
+    width: 100%;
+    overflow: hidden;
     margin: 0 auto;
 }
 
-.food-input-section .form-control {
-    font-size: var(--font-size-lg);
-    padding: var(--space-12) var(--space-16);
-    margin-bottom: var(--space-12);
+.analysis-section::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, 
+        var(--color-primary), 
+        var(--color-teal-400), 
+        var(--color-teal-600), 
+        var(--color-primary)
+    );
+    background-size: 400% 400%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: borderFlow 3s ease-in-out infinite;
 }
 
-/* ================================
-   VITAMIN CARDS SECTION
-   ================================ */
+.analysis-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-teal-400), var(--color-primary));
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+    opacity: 0.1;
+    pointer-events: none;
+    border-radius: inherit;
+}
 
-.vitamins-section {
+@keyframes borderFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.analysis-input-container {
+    position: relative;
+    z-index: 1;
+}
+
+.analysis-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
     margin-bottom: var(--space-32);
 }
 
-.vitamins-section h2 {
-    text-align: center;
-    margin-bottom: var(--space-24);
-    color: var(--color-text);
-    font-size: var(--font-size-3xl);
-}
-
-/* Responsive Grid Layout for Vitamin Cards */
-.vitamins-grid {
-    display: grid;
-    gap: var(--space-20);
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    padding: 0 var(--space-16);
-}
-
-/* ================================
-   VITAMIN CARDS - DEFAULT VIBRANT STATES WITH ANIMATIONS
-   ================================ */
-
-/* Base vitamin card styling */
-.vitamin-card {
+.analysis-input {
+    font-size: var(--font-size-lg);
+    padding: var(--space-16) var(--space-20);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-border);
     background: var(--color-surface);
-    border-radius: var(--radius-lg);
-    padding: var(--space-20);
-    border: 3px solid var(--color-card-border);
+    transition: all var(--duration-normal) cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
-    transition: all var(--duration-normal) var(--ease-standard);
+    text-align: center;
 }
 
-/* Default state hover effects and animations */
-.vitamin-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+.analysis-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-focus-ring), var(--shadow-md);
+    transform: translateY(-2px) scale(1.02);
 }
 
-/* ================================
-   VIBRANT WATER-SOLUBLE VITAMIN CARDS (BLUE THEME)
-   ================================ */
-
-/* Water-soluble vitamin cards - Vibrant blue theme with animations */
-.vitamin-card.water-soluble {
-    background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.15) 0%,     /* Vibrant blue gradient */
-        rgba(37, 99, 235, 0.1) 50%,
-        rgba(59, 130, 246, 0.05) 100%
-    ) !important;
-    border: 3px solid #3B82F6 !important; /* Vibrant blue border */
-    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2) !important;
-    animation: pulseBlue 3s ease-in-out infinite;
-}
-
-.vitamin-card.water-soluble:hover {
-    background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.25) 0%,
-        rgba(37, 99, 235, 0.15) 50%,
-        rgba(59, 130, 246, 0.1) 100%
-    ) !important;
-    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3) !important;
-    transform: translateY(-6px) scale(1.02);
-}
-
-@keyframes pulseBlue {
-    0%, 100% { box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2); }
-    50% { box-shadow: 0 4px 25px rgba(59, 130, 246, 0.35); }
-}
-
-/* ================================
-   VIBRANT FAT-SOLUBLE VITAMIN CARDS (YELLOW THEME)
-   ================================ */
-
-/* Fat-soluble vitamin cards - Vibrant yellow theme with animations */
-.vitamin-card.fat-soluble {
-    background: linear-gradient(135deg, 
-        rgba(245, 158, 11, 0.15) 0%,     /* Vibrant yellow gradient */
-        rgba(217, 119, 6, 0.1) 50%,
-        rgba(245, 158, 11, 0.05) 100%
-    ) !important;
-    border: 3px solid #F59E0B !important; /* Vibrant yellow border */
-    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2) !important;
-    animation: pulseYellow 3s ease-in-out infinite;
-}
-
-.vitamin-card.fat-soluble:hover {
-    background: linear-gradient(135deg, 
-        rgba(245, 158, 11, 0.25) 0%,
-        rgba(217, 119, 6, 0.15) 50%,
-        rgba(245, 158, 11, 0.1) 100%
-    ) !important;
-    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3) !important;
-    transform: translateY(-6px) scale(1.02);
-}
-
-@keyframes pulseYellow {
-    0%, 100% { box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2); }
-    50% { box-shadow: 0 4px 25px rgba(245, 158, 11, 0.35); }
-}
-
-/* ================================
-   FOOD MATCHING COLORS - COMPLETE OVERRIDE
-   These styles completely override the blue/yellow theme
-   ================================ */
-
-/* MATCHED STATE - SOLID GREEN (overrides everything) */
-.vitamin-card.matched {
-    background: #10B981 !important; /* Solid vibrant green background */
-    border: 3px solid #059669 !important; /* Darker green border */
-    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4) !important;
-    animation: none !important; /* Stop all animations */
-    color: white !important; /* Ensure text is readable */
-}
-
-.vitamin-card.matched:hover {
-    background: #059669 !important; /* Darker green on hover */
-    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6) !important;
-    transform: translateY(-4px);
-    animation: none !important;
-}
-
-.vitamin-card.matched .vitamin-name,
-.vitamin-card.matched .vitamin-type,
-.vitamin-card.matched .vitamin-function {
-    color: white !important;
-}
-
-.vitamin-card.matched .food-tag {
-    background: rgba(255, 255, 255, 0.2) !important;
-    color: white !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-}
-
-/* UNMATCHED STATE - SOLID RED (overrides everything) */
-.vitamin-card.unmatched {
-    background: #EF4444 !important; /* Solid vibrant red background */
-    border: 3px solid #DC2626 !important; /* Darker red border */
-    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4) !important;
-    animation: none !important; /* Stop all animations */
-    color: white !important; /* Ensure text is readable */
-}
-
-.vitamin-card.unmatched:hover {
-    background: #DC2626 !important; /* Darker red on hover */
-    box-shadow: 0 8px 30px rgba(239, 68, 68, 0.6) !important;
-    transform: translateY(-4px);
-    animation: none !important;
-}
-
-.vitamin-card.unmatched .vitamin-name,
-.vitamin-card.unmatched .vitamin-type,
-.vitamin-card.unmatched .vitamin-function {
-    color: white !important;
-}
-
-.vitamin-card.unmatched .food-tag {
-    background: rgba(255, 255, 255, 0.2) !important;
-    color: white !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-}
-
-/* ================================
-   VITAMIN CARD CONTENT STYLING
-   ================================ */
-
-/* Vitamin Card Header */
-.vitamin-header {
+.analysis-buttons {
     display: flex;
-    align-items: center;
-    margin-bottom: var(--space-16);
-}
-
-.vitamin-icon {
-    font-size: 2.5rem;
-    margin-right: var(--space-12);
-    padding: var(--space-8);
-    border-radius: var(--radius-full);
-    display: flex;
-    align-items: center;
+    gap: var(--space-16);
     justify-content: center;
-    min-width: 60px;
-    height: 60px;
+    flex-wrap: wrap;
 }
 
-/* Water-soluble vitamins (blue theme) */
-.water-soluble .vitamin-icon {
-    background: rgba(59, 130, 246, 0.2);
-    border: 2px solid #3B82F6;
+.analysis-btn {
+    position: relative;
+    padding: var(--space-12) var(--space-24);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all var(--duration-normal) cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 160px;
 }
 
-/* Fat-soluble vitamins (yellow theme) */
-.fat-soluble .vitamin-icon {
-    background: rgba(245, 158, 11, 0.2);
-    border: 2px solid #F59E0B;
+.btn-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform var(--duration-normal) ease;
 }
 
-/* Override icon styles for matched/unmatched states */
-.vitamin-card.matched .vitamin-icon,
-.vitamin-card.unmatched .vitamin-icon {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+.analysis-btn:hover .btn-gradient {
+    transform: translateX(100%);
 }
 
-.vitamin-name {
+.analysis-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Percentage Indicator Enhanced */
+.percentage-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-20);
+    position: relative;
+    z-index: 1;
+}
+
+.percentage-circle {
+    position: relative;
+    display: inline-block;
+}
+
+.progress-ring {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.progress-ring__circle {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.percentage-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.percentage-value {
+    display: block;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all var(--duration-normal) cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.percentage-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-top: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.coverage-details {
+    display: flex;
+    gap: var(--space-32);
+    text-align: center;
+}
+
+.coverage-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.coverage-count {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-text);
-    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all var(--duration-normal) cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.vitamin-type {
+.coverage-type {
     font-size: var(--font-size-sm);
     color: var(--color-text-secondary);
-    font-weight: var(--font-weight-medium);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
 }
 
-/* Vitamin Function Description */
-.vitamin-function {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-16);
-    line-height: var(--line-height-normal);
+/* Section Titles */
+.nutrients-section {
+    margin-bottom: var(--space-32);
+    padding: 0 var(--space-16);
 }
 
-/* Food Sources Lists */
-.food-sources {
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-32);
+    text-align: center;
+    position: relative;
+}
+
+.section-title-gradient {
+    background: linear-gradient(135deg, var(--color-text), var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Nutrient Grid */
+.nutrient-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-24);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ENHANCED NUTRIENT CARDS with MULTI-COLOR GRADIENT BORDERS */
+.nutrient-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    padding: var(--space-24);
+    overflow: hidden;
+    transition: all var(--duration-normal) cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    background: transparent;
+}
+
+/* Multi-layer gradient border system */
+.nutrient-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 4px;
+    border-radius: inherit;
+    background: var(--primary-border-gradient);
+    background-size: 400% 400%;
+    animation: primaryBorderPulse 3s ease-in-out infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: exclude;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+.nutrient-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--secondary-border-gradient);
+    background-size: 300% 300%;
+    border-radius: calc(var(--radius-lg) + 2px);
+    z-index: -2;
+    animation: secondaryBorderPulse 4s ease-in-out infinite reverse;
+}
+
+/* Card background */
+.nutrient-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.nutrient-card .card-content-bg {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: var(--card-bg-gradient);
+    border-radius: calc(var(--radius-lg) - 2px);
+    z-index: 1;
+}
+
+/* Water-soluble vitamin theme - Multiple Blues */
+.vitamin-card.water-soluble {
+    --card-bg-gradient: linear-gradient(135deg, #3B82F6, #1D4ED8, #2563EB);
+    --primary-border-gradient: linear-gradient(45deg, #3B82F6, #60A5FA, #93C5FD, #1D4ED8, #3B82F6, #60A5FA);
+    --secondary-border-gradient: linear-gradient(45deg, #1E40AF, #3B82F6, #60A5FA, #DBEAFE, #1E40AF, #3B82F6);
+    --card-text-color: #FFFFFF;
+    --card-text-secondary: rgba(255, 255, 255, 0.85);
+}
+
+/* Fat-soluble vitamin theme - Multiple Yellows */
+.vitamin-card.fat-soluble {
+    --card-bg-gradient: linear-gradient(135deg, #F59E0B, #D97706, #EA580C);
+    --primary-border-gradient: linear-gradient(45deg, #F59E0B, #FBBF24, #FCD34D, #D97706, #F59E0B, #FBBF24);
+    --secondary-border-gradient: linear-gradient(45deg, #B45309, #F59E0B, #FBBF24, #FEF3C7, #B45309, #F59E0B);
+    --card-text-color: #FFFFFF;
+    --card-text-secondary: rgba(255, 255, 255, 0.85);
+}
+
+/* Mineral theme - Multiple Pale Colors */
+.mineral-card {
+    --card-bg-gradient: linear-gradient(135deg, #E0B4D6, #D194C5, #C084B8);
+    --primary-border-gradient: linear-gradient(45deg, #E0B4D6, #F3D4E6, #F8E8F2, #D194C5, #E0B4D6, #F3D4E6);
+    --secondary-border-gradient: linear-gradient(45deg, #B565A7, #E0B4D6, #F3D4E6, #FDF2F8, #B565A7, #E0B4D6);
+    --card-text-color: #1F2937;
+    --card-text-secondary: rgba(31, 41, 55, 0.8);
+}
+
+/* Pulsing animations */
+@keyframes primaryBorderPulse {
+    0%, 100% { 
+        background-position: 0% 50%;
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    50% { 
+        background-position: 100% 50%;
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+@keyframes secondaryBorderPulse {
+    0%, 100% { 
+        background-position: 0% 50%;
+        opacity: 0.6;
+    }
+    50% { 
+        background-position: 100% 50%;
+        opacity: 0.8;
+    }
+}
+
+/* ADVANCED HOVER EFFECTS */
+.nutrient-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.nutrient-card:hover::before {
+    animation-duration: 1s;
+    transform: scale(1.05);
+}
+
+.nutrient-card:hover::after {
+    animation-duration: 1.5s;
+    opacity: 1;
+}
+
+/* Add background div for each card */
+.nutrient-card .card-content-bg {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: var(--card-bg-gradient);
+    border-radius: calc(var(--radius-lg) - 2px);
+    z-index: 1;
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    margin-bottom: var(--space-20);
+    position: relative;
+    z-index: 2;
+}
+
+.card-icon {
+    font-size: var(--font-size-3xl);
+    flex-shrink: 0;
+    transition: all var(--duration-normal) cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.nutrient-card:hover .card-icon {
+    transform: scale(1.3) rotate(10deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+.card-title {
+    flex: 1;
+}
+
+.card-name {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--card-text-color);
+    margin: 0;
+    line-height: var(--line-height-tight);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-type {
+    font-size: var(--font-size-sm);
+    color: var(--card-text-secondary);
+    margin: var(--space-4) 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Card Content */
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-function {
+    font-size: var(--font-size-sm);
+    color: var(--card-text-secondary);
+    line-height: var(--line-height-normal);
+    margin-bottom: var(--space-20);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.card-sources {
+    display: flex;
+    flex-direction: column;
     gap: var(--space-12);
 }
 
-.source-group h4 {
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
-    margin-bottom: var(--space-6);
+.source-category {
     display: flex;
-    align-items: center;
-    gap: var(--space-6);
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    align-items: flex-start;
 }
 
-.source-list {
+.source-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--card-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    min-width: 60px;
+    margin-top: var(--space-2);
+}
+
+.source-tags {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-6);
-    margin-bottom: var(--space-8);
 }
 
-.food-tag {
-    background: var(--color-secondary);
-    color: var(--color-text);
+.source-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--card-text-color);
     padding: var(--space-4) var(--space-8);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-medium);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all var(--duration-fast) cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(10px);
 }
 
-/* ================================
-   WELLNESS INDICATORS SECTION
-   ================================ */
-
-.wellness-section {
-    margin-bottom: var(--space-32);
+.source-tag:hover {
+    transform: translateY(-2px) scale(1.1);
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.wellness-section h2 {
-    text-align: center;
-    margin-bottom: var(--space-24);
-    color: var(--color-text);
-    font-size: var(--font-size-3xl);
+/* Card States with enhanced effects */
+.nutrient-card.matched {
+    --card-bg-gradient: linear-gradient(135deg, #10B981, #059669, #047857) !important;
+    --primary-border-gradient: linear-gradient(45deg, #10B981, #34D399, #6EE7B7, #059669, #10B981, #34D399) !important;
+    --secondary-border-gradient: linear-gradient(45deg, #047857, #10B981, #34D399, #D1FAE5, #047857, #10B981) !important;
+    --card-text-color: #FFFFFF !important;
+    --card-text-secondary: rgba(255, 255, 255, 0.9) !important;
+    animation: successPulse 2s ease-in-out;
 }
 
-.wellness-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-20);
-    padding: 0 var(--space-16);
+.nutrient-card.unmatched {
+    --card-bg-gradient: linear-gradient(135deg, #EF4444, #DC2626, #B91C1C) !important;
+    --primary-border-gradient: linear-gradient(45deg, #EF4444, #F87171, #FCA5A5, #DC2626, #EF4444, #F87171) !important;
+    --secondary-border-gradient: linear-gradient(45deg, #B91C1C, #EF4444, #F87171, #FEE2E2, #B91C1C, #EF4444) !important;
+    --card-text-color: #FFFFFF !important;
+    --card-text-secondary: rgba(255, 255, 255, 0.9) !important;
+    animation: errorPulse 2s ease-in-out;
 }
 
-.wellness-card {
-    background: var(--color-surface);
-    border-radius: var(--radius-lg);
-    padding: var(--space-24);
-    text-align: center;
-    border: 2px solid var(--color-card-border);
-    box-shadow: var(--shadow-sm);
-    transition: all var(--duration-normal) var(--ease-standard);
-    cursor: pointer;
+@keyframes successPulse {
+    0%, 100% { 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(16, 185, 129, 0.6), 0 20px 40px rgba(0, 0, 0, 0.2);
+        transform: scale(1.02);
+    }
 }
 
-.wellness-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+@keyframes errorPulse {
+    0%, 100% { 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(239, 68, 68, 0.6), 0 20px 40px rgba(0, 0, 0, 0.2);
+        transform: scale(1.02);
+    }
 }
 
-.wellness-icon {
-    font-size: 3rem;
-    margin-bottom: var(--space-16);
-}
-
-.wellness-card h3 {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-8);
-    color: var(--color-text);
-}
-
-.wellness-card p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-16);
-}
-
-.status-indicator {
-    padding: var(--space-8) var(--space-16);
-    border-radius: var(--radius-full);
-    font-weight: var(--font-weight-semibold);
-    transition: all var(--duration-normal) var(--ease-standard);
-}
-
-.status-text {
-    font-size: var(--font-size-md);
-}
-
-/* ================================
-   WELLNESS CARD COLOR STATES
-   ================================ */
-
-/* Default light color for vitamin cards */
-.vitamin-card.default-light {
-    background: var(--color-surface);
-    border-color: var(--color-card-border);
-}
-
-/* Green state (matched/good) */
-.wellness-card.default-green {
-    background: rgba(var(--color-success-rgb), 0.1);
-    border-color: var(--color-success);
-}
-
-.wellness-card.default-green .status-indicator {
-    background: rgba(var(--color-success-rgb), 0.2);
-    color: var(--color-success);
-}
-
-/* Red state (unmatched/bad) */
-.wellness-card.default-red {
-    background: rgba(var(--color-error-rgb), 0.1);
-    border-color: var(--color-error);
-}
-
-.wellness-card.default-red .status-indicator {
-    background: rgba(var(--color-error-rgb), 0.2);
-    color: var(--color-error);
-}
-
-/* Active state for wellness cards */
-.wellness-card.active-green {
-    background: rgba(var(--color-success-rgb), 0.15);
-    border-color: var(--color-success);
-}
-
-.wellness-card.active-green .status-indicator {
-    background: rgba(var(--color-success-rgb), 0.25);
-    color: var(--color-success);
-}
-
-.wellness-card.active-red {
-    background: rgba(var(--color-error-rgb), 0.15);
-    border-color: var(--color-error);
-}
-
-.wellness-card.active-red .status-indicator {
-    background: rgba(var(--color-error-rgb), 0.25);
-    color: var(--color-error);
-}
-
-/* ================================
-   FOOTER SECTION
-   ================================ */
-
+/* Footer */
 .footer {
-    background: var(--color-surface);
-    border-top: 1px solid var(--color-border);
-    padding: var(--space-24) 0;
     text-align: center;
+    padding: var(--space-32) var(--space-16);
     margin-top: var(--space-32);
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-2);
 }
 
 .footer p {
     color: var(--color-text-secondary);
-    margin: 0;
     font-size: var(--font-size-sm);
+    margin: 0;
 }
 
-/* ================================
-   RESPONSIVE DESIGN
-   ================================ */
+/* Loading States */
+.analyzing {
+    opacity: 0.9;
+}
 
-/* Mobile devices (< 768px) */
-@media (max-width: 767px) {
-    .main-title {
+.analyzing .nutrient-card {
+    animation: analysisLoading 1.5s ease-in-out infinite;
+}
+
+@keyframes analysisLoading {
+    0%, 100% { 
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn:disabled:hover {
+    transform: none !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        margin: var(--space-8) var(--space-8) var(--space-24) var(--space-8);
+        padding: var(--space-24) var(--space-16);
+    }
+    
+    .header__title {
         font-size: var(--font-size-3xl);
     }
     
-    .vitamins-grid {
-        grid-template-columns: 1fr;
-        padding: 0 var(--space-8);
+    .analysis-section {
+        padding: var(--space-24);
+        margin: 0 var(--space-8);
     }
     
-    .control-buttons {
+    .analysis-buttons {
         flex-direction: column;
-        align-items: center;
     }
     
-    .control-btn {
+    .analysis-btn {
         width: 100%;
-        max-width: 280px;
+        min-width: auto;
     }
     
-    .vitamin-header {
-        flex-direction: column;
-        text-align: center;
+    .coverage-details {
+        gap: var(--space-20);
     }
     
-    .vitamin-icon {
-        margin-right: 0;
-        margin-bottom: var(--space-8);
-    }
-    
-    .wellness-grid {
+    .nutrient-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-20);
+    }
+    
+    .nutrient-card {
+        padding: var(--space-20);
+    }
+    
+    .nutrients-section {
         padding: 0 var(--space-8);
     }
 }
 
-/* Tablet devices (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .vitamins-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+@media (max-width: 480px) {
+    .header__title {
+        font-size: var(--font-size-2xl);
     }
     
-    .control-buttons {
-        justify-content: center;
-    }
-}
-
-/* Desktop devices (> 1024px) */
-@media (min-width: 1024px) {
-    .vitamins-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    .section-title {
+        font-size: var(--font-size-2xl);
     }
     
-    .wellness-grid {
-        max-width: 800px;
-        margin: 0 auto;
+    .analysis-section {
+        padding: var(--space-20);
     }
     
-    .controls-section {
-        max-width: 900px;
-        margin: 0 auto var(--space-32) auto;
+    .coverage-details {
+        flex-direction: column;
+        gap: var(--space-12);
     }
-}
-
-/* ================================
-   UTILITY CLASSES
-   ================================ */
-
-/* Hide elements */
-.hidden {
-    display: none !important;
-}
-
-/* Show elements */
-.visible {
-    display: block !important;
-}
-
-/* Text alignment */
-.text-center {
-    text-align: center;
-}
-
-/* Margin utilities */
-.mt-8 {
-    margin-top: var(--space-8) !important;
-}
-
-.mb-16 {
-    margin-bottom: var(--space-16) !important;
-}
-
-/* Animation for smooth transitions */
-.fade-in {
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+    
+    .nutrient-card {
+        padding: var(--space-16);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .card-icon {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .card-name {
+        font-size: var(--font-size-lg);
+    }
+    
+    .nutrient-card:hover .card-icon {
+        transform: scale(1.2) rotate(8deg);
     }
 }

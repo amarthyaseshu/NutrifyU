@@ -1,0 +1,999 @@
+/* Final Enhanced NutrifyU Design System - Centered Search + Enhanced Border Designs */
+:root {
+/* Enhanced Color Palette */
+--color-white: rgba(255, 255, 255, 1);
+--color-cream-50: rgba(252, 252, 249, 1);
+--color-cream-100: rgba(255, 255, 253, 1);
+--color-gray-200: rgba(245, 245, 245, 1);
+--color-gray-300: rgba(167, 169, 169, 1);
+--color-gray-400: rgba(119, 124, 124, 1);
+--color-slate-500: rgba(98, 108, 113, 1);
+--color-slate-900: rgba(19, 52, 59, 1);
+--color-teal-500: rgba(33, 128, 141, 1);
+--color-teal-600: rgba(29, 116, 128, 1);
+
+/* Enhanced Border Colors with Multiple Variations */
+--color-blue-primary: #3B82F6;
+--color-blue-secondary: #60A5FA;
+--color-blue-tertiary: #93C5FD;
+--color-blue-accent: #1D4ED8;
+--color-yellow-primary: #F59E0B;
+--color-yellow-secondary: #FBBF24;
+--color-yellow-tertiary: #FCD34D;
+--color-yellow-accent: #D97706;
+--color-pale-primary: #E0B4D6;
+--color-pale-secondary: #F3D4E6;
+--color-pale-tertiary: #F8E8F2;
+--color-pale-accent: #D194C5;
+--color-success: #10B981;
+--color-error: #EF4444;
+
+/* Interior Card Design Colors */
+--color-blue-interior: rgba(59, 130, 246, 0.05);
+--color-blue-accent-bg: rgba(59, 130, 246, 0.15);
+--color-yellow-interior: rgba(245, 158, 11, 0.05);
+--color-yellow-accent-bg: rgba(245, 158, 11, 0.15);
+--color-pale-interior: rgba(224, 180, 214, 0.05);
+--color-pale-accent-bg: rgba(224, 180, 214, 0.15);
+
+/* Card Styling */
+--color-card-light: rgba(255, 255, 255, 0.95);
+--color-card-border: rgba(229, 231, 235, 0.8);
+
+/* Typography */
+--font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+--font-size-xs: 11px;
+--font-size-sm: 12px;
+--font-size-base: 14px;
+--font-size-md: 15px;
+--font-size-lg: 16px;
+--font-size-xl: 18px;
+--font-size-2xl: 20px;
+--font-size-3xl: 24px;
+--font-size-4xl: 30px;
+--font-weight-normal: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+--line-height-tight: 1.25;
+--line-height-normal: 1.5;
+
+/* Spacing System */
+--space-1: 4px;
+--space-2: 8px;
+--space-3: 12px;
+--space-4: 16px;
+--space-5: 20px;
+--space-6: 24px;
+--space-8: 32px;
+--space-10: 40px;
+--space-12: 48px;
+
+/* Border Radius */
+--radius-sm: 6px;
+--radius-base: 8px;
+--radius-md: 12px;
+--radius-lg: 16px;
+--radius-xl: 20px;
+
+/* Enhanced Shadows */
+--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+/* Animation */
+--duration-fast: 200ms;
+--duration-normal: 300ms;
+--duration-slow: 500ms;
+--ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+--ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Base Styles */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+font-size: 16px;
+font-family: var(--font-family-base);
+line-height: var(--line-height-normal);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+background: linear-gradient(135deg,
+rgba(34, 197, 94, 0.03) 0%,
+rgba(59, 130, 246, 0.03) 50%,
+rgba(6, 182, 212, 0.03) 100%
+);
+min-height: 100vh;
+color: var(--color-slate-900);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+font-weight: var(--font-weight-semibold);
+line-height: var(--line-height-tight);
+color: var(--color-slate-900);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+
+/* Layout */
+.container {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 var(--space-4);
+}
+
+.main-content {
+padding: var(--space-8) 0;
+}
+
+/* Header */
+.header {
+background: linear-gradient(135deg, 
+rgba(33, 128, 141, 0.08) 0%, 
+rgba(33, 128, 141, 0.12) 100%
+);
+border-bottom: 3px solid var(--color-teal-500);
+padding: var(--space-6) 0;
+text-align: center;
+box-shadow: var(--shadow-md);
+}
+
+.main-title {
+font-size: var(--font-size-4xl);
+font-weight: var(--font-weight-bold);
+color: var(--color-teal-500);
+margin-bottom: var(--space-2);
+text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+font-size: var(--font-size-lg);
+color: var(--color-slate-500);
+}
+
+/* ================================
+CENTERED CONTROLS SECTION - ENHANCED
+================================ */
+.controls-section {
+margin-bottom: var(--space-8);
+padding: var(--space-8);
+background: linear-gradient(135deg, 
+var(--color-card-light) 0%, 
+rgba(255, 255, 255, 0.9) 100%
+);
+border-radius: var(--radius-xl);
+border: 2px solid var(--color-card-border);
+box-shadow: var(--shadow-lg);
+/* CENTERED: Perfect centering */
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: var(--space-8);
+}
+
+.controls-section h2 {
+text-align: center;
+margin-bottom: var(--space-8);
+color: var(--color-slate-900);
+font-size: var(--font-size-3xl);
+font-weight: var(--font-weight-bold);
+}
+
+/* CENTERED: Enhanced input container */  
+.centered-input-container {
+max-width: 600px;
+margin: 0 auto;
+text-align: center;
+}
+
+.form-control {
+width: 100%;
+padding: var(--space-4) var(--space-5);
+font-size: var(--font-size-lg);
+border: 3px solid rgba(33, 128, 141, 0.2);
+border-radius: var(--radius-lg);
+background: var(--color-white);
+color: var(--color-slate-900);
+transition: all var(--duration-normal) var(--ease-bounce);
+margin-bottom: var(--space-4);
+box-shadow: var(--shadow-sm);
+}
+
+.form-control:focus {
+outline: none;
+border-color: var(--color-teal-500);
+box-shadow: 0 0 0 4px rgba(33, 128, 141, 0.15), var(--shadow-md);
+transform: scale(1.02);
+}
+
+.button-group {
+display: flex;
+gap: var(--space-4);
+justify-content: center;
+flex-wrap: wrap;
+margin-top: var(--space-4);
+}
+
+/* Enhanced Buttons */
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: var(--space-4) var(--space-6);
+border-radius: var(--radius-lg);
+font-size: var(--font-size-lg);
+font-weight: var(--font-weight-semibold);
+border: none;
+cursor: pointer;
+transition: all var(--duration-normal) var(--ease-bounce);
+text-decoration: none;
+min-width: 160px;
+box-shadow: var(--shadow-md);
+}
+
+.control-btn {
+padding: var(--space-4) var(--space-8);
+font-size: var(--font-size-xl);
+font-weight: var(--font-weight-bold);
+min-width: 180px;
+}
+
+.btn--primary {
+background: linear-gradient(135deg, var(--color-teal-500) 0%, var(--color-teal-600) 100%);
+color: white;
+border: 2px solid var(--color-teal-600);
+}
+
+.btn--primary:hover {
+background: linear-gradient(135deg, var(--color-teal-600) 0%, var(--color-teal-500) 100%);
+transform: translateY(-3px) scale(1.05);
+box-shadow: var(--shadow-xl);
+}
+
+.btn--outline {
+background: transparent;
+color: var(--color-slate-900);
+border: 3px solid var(--color-teal-500);
+}
+
+.btn--outline:hover {
+background: linear-gradient(135deg, rgba(33, 128, 141, 0.1) 0%, rgba(33, 128, 141, 0.05) 100%);
+border-color: var(--color-teal-600);
+transform: translateY(-3px) scale(1.05);
+box-shadow: var(--shadow-xl);
+}
+
+/* Enhanced Percentage Indicator */
+.percentage-section {
+margin-bottom: var(--space-8);
+display: flex;
+justify-content: center;
+}
+
+.percentage-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: var(--space-5);
+padding: var(--space-8);
+background: linear-gradient(135deg, 
+var(--color-card-light) 0%, 
+rgba(255, 255, 255, 0.9) 100%
+);
+border-radius: var(--radius-xl);
+border: 2px solid var(--color-card-border);
+box-shadow: var(--shadow-lg);
+}
+
+.percentage-circle {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.progress-ring {
+transform: rotate(-90deg);
+transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.progress-ring__circle {
+stroke-dasharray: 377; /* 2π × 60 */
+stroke-dashoffset: 377;
+transition: stroke-dashoffset 0.6s ease-out;
+}
+
+.percentage-text {
+position: absolute;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.percentage-number {
+font-size: var(--font-size-3xl);
+font-weight: var(--font-weight-bold);
+color: var(--color-success);
+line-height: 1;
+}
+
+.percentage-symbol {
+font-size: var(--font-size-lg);
+color: var(--color-success);
+line-height: 1;
+}
+
+.percentage-label {
+font-size: var(--font-size-sm);
+color: var(--color-slate-500);
+margin-top: var(--space-1);
+font-weight: var(--font-weight-medium);
+}
+
+.coverage-details {
+display: flex;
+gap: var(--space-8);
+text-align: center;
+}
+
+.coverage-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.coverage-count {
+font-size: var(--font-size-xl);
+font-weight: var(--font-weight-bold);
+color: var(--color-teal-500);
+line-height: 1;
+}
+
+.coverage-total {
+font-size: var(--font-size-sm);
+color: var(--color-slate-500);
+font-weight: var(--font-weight-medium);
+}
+
+/* Section Styling */
+.vitamins-section,
+.minerals-section {
+margin-bottom: var(--space-8);
+}
+
+.vitamins-section h2,
+.minerals-section h2 {
+text-align: center;
+margin-bottom: var(--space-6);
+color: var(--color-slate-900);
+font-weight: var(--font-weight-bold);
+}
+
+/* Enhanced Uniform Grid */
+.nutrition-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+gap: var(--space-6);
+padding: 0 var(--space-2);
+}
+
+/* ===================================
+ENHANCED NUTRITION CARDS - BORDER FOCUS + INTERIOR DESIGN + HOVER EFFECTS
+=================================== */
+
+.vitamin-card,
+.mineral-card {
+/* Uniform dimensions - MAINTAINED */
+min-height: 380px;
+max-height: 380px;
+display: flex;
+flex-direction: column;
+
+/* ENHANCED: Interior background with color themes */
+background: linear-gradient(135deg, 
+var(--interior-color-1) 0%, 
+var(--interior-color-2) 100%
+);
+backdrop-filter: blur(10px);
+
+/* ENHANCED: Multiple border layers for rich design */
+border-radius: var(--radius-lg);
+position: relative;
+overflow: hidden;
+
+/* ENHANCED: Dynamic shadow system */
+box-shadow: var(--shadow-md);
+
+/* ENHANCED: Smooth transitions with bounce */
+transition: all var(--duration-normal) var(--ease-bounce);
+}
+
+/* ENHANCED: Primary gradient border with multiple colors */
+.vitamin-card::before,
+.mineral-card::before {
+content: '';
+position: absolute;
+inset: 0;
+padding: 4px;
+background: linear-gradient(135deg, 
+var(--border-color-1) 0%, 
+var(--border-color-2) 25%, 
+var(--border-color-3) 50%, 
+var(--border-color-4) 75%, 
+var(--border-color-1) 100%
+);
+border-radius: inherit;
+mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+mask-composite: xor;
+-webkit-mask-composite: xor;
+z-index: -1;
+transition: all var(--duration-normal) var(--ease-standard);
+}
+
+/* ENHANCED: Secondary decorative border layer */
+.vitamin-card::after,
+.mineral-card::after {
+content: '';
+position: absolute;
+inset: 2px;
+border-radius: calc(var(--radius-lg) - 2px);
+background: linear-gradient(45deg, 
+rgba(var(--accent-color), 0.1) 0%, 
+transparent 30%, 
+rgba(var(--accent-color), 0.05) 70%, 
+transparent 100%
+);
+pointer-events: none;
+z-index: 0;
+transition: all var(--duration-normal) var(--ease-standard);
+}
+
+/* ENHANCED: Water-soluble vitamins - Multi-color blue borders */
+.vitamin-card.water-soluble {
+--border-color-1: var(--color-blue-primary);
+--border-color-2: var(--color-blue-secondary);
+--border-color-3: var(--color-blue-tertiary);
+--border-color-4: var(--color-blue-accent);
+--accent-color: 59, 130, 246;
+--interior-color-1: var(--color-blue-interior);
+--interior-color-2: rgba(255, 255, 255, 0.98);
+}
+
+.vitamin-card.water-soluble::before {
+animation: borderPulseBlue 4s ease-in-out infinite;
+}
+
+/* ENHANCED: Fat-soluble vitamins - Multi-color yellow borders */
+.vitamin-card.fat-soluble {
+--border-color-1: var(--color-yellow-primary);
+--border-color-2: var(--color-yellow-secondary);
+--border-color-3: var(--color-yellow-tertiary);
+--border-color-4: var(--color-yellow-accent);
+--accent-color: 245, 158, 11;
+--interior-color-1: var(--color-yellow-interior);
+--interior-color-2: rgba(255, 255, 255, 0.98);
+}
+
+.vitamin-card.fat-soluble::before {
+animation: borderPulseYellow 4s ease-in-out infinite;
+}
+
+/* ENHANCED: Minerals - Multi-color pale borders */
+.mineral-card.mineral {
+--border-color-1: var(--color-pale-primary);
+--border-color-2: var(--color-pale-secondary);
+--border-color-3: var(--color-pale-tertiary);
+--border-color-4: var(--color-pale-accent);
+--accent-color: 224, 180, 214;
+--interior-color-1: var(--color-pale-interior);
+--interior-color-2: rgba(255, 255, 255, 0.98);
+}
+
+.mineral-card.mineral::before {
+animation: borderPulsePale 4s ease-in-out infinite;
+}
+
+/* ENHANCED: Advanced border animations with color transitions */
+@keyframes borderPulseBlue {
+0%, 100% { 
+opacity: 0.8; 
+transform: scale(1);
+}
+25% { 
+opacity: 1; 
+transform: scale(1.01);
+}
+50% { 
+opacity: 0.9; 
+transform: scale(1.02);
+}
+75% { 
+opacity: 1; 
+transform: scale(1.01);
+}
+}
+
+@keyframes borderPulseYellow {
+0%, 100% { 
+opacity: 0.8; 
+transform: scale(1);
+}
+25% { 
+opacity: 1; 
+transform: scale(1.01);
+}
+50% { 
+opacity: 0.9; 
+transform: scale(1.02);
+}
+75% { 
+opacity: 1; 
+transform: scale(1.01);
+}
+}
+
+@keyframes borderPulsePale {
+0%, 100% { 
+opacity: 0.7; 
+transform: scale(1);
+}
+25% { 
+opacity: 0.9; 
+transform: scale(1.01);
+}
+50% { 
+opacity: 1; 
+transform: scale(1.02);
+}
+75% { 
+opacity: 0.9; 
+transform: scale(1.01);
+}
+}
+
+/* ENHANCED: Advanced Hover Effects with Multi-layer Animation */
+.vitamin-card:hover,
+.mineral-card:hover {
+transform: translateY(-8px) scale(1.03);
+box-shadow: var(--shadow-2xl);
+}
+
+.vitamin-card:hover::before,
+.mineral-card:hover::before {
+opacity: 1 !important;
+animation-duration: 1s !important;
+transform: scale(1.05);
+background: linear-gradient(135deg, 
+var(--border-color-1) 0%, 
+var(--border-color-2) 20%, 
+var(--border-color-3) 40%, 
+var(--border-color-4) 60%, 
+var(--border-color-1) 80%, 
+var(--border-color-2) 100%
+);
+}
+
+.vitamin-card:hover::after,
+.mineral-card:hover::after {
+background: linear-gradient(45deg, 
+rgba(var(--accent-color), 0.2) 0%, 
+rgba(var(--accent-color), 0.1) 30%, 
+rgba(var(--accent-color), 0.15) 70%, 
+rgba(var(--accent-color), 0.05) 100%
+);
+}
+
+/* ===================================
+MAINTAINED: MATCHED/UNMATCHED STATES
+=================================== */
+.vitamin-card.matched,
+.mineral-card.matched {
+background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%) !important;
+color: white !important;
+}
+
+.vitamin-card.matched::before,
+.mineral-card.matched::before {
+background: linear-gradient(135deg, #059669, #10B981, #34D399, #6EE7B7) !important;
+animation: none !important;
+opacity: 1 !important;
+}
+
+.vitamin-card.unmatched,
+.mineral-card.unmatched {
+background: linear-gradient(135deg, var(--color-error) 0%, #DC2626 100%) !important;
+color: white !important;
+}
+
+.vitamin-card.unmatched::before,
+.mineral-card.unmatched::before {
+background: linear-gradient(135deg, #DC2626, #EF4444, #F87171, #FCA5A5) !important;
+animation: none !important;
+opacity: 1 !important;
+}
+
+.vitamin-card.matched *,
+.vitamin-card.unmatched *,
+.mineral-card.matched *,
+.mineral-card.unmatched * {
+color: white !important;
+}
+
+/* ENHANCED: Card Content Layout with Rich Interior Design */
+.nutrition-header {
+display: flex;
+align-items: flex-start;
+gap: var(--space-4);
+margin-bottom: var(--space-4);
+padding: var(--space-5);
+position: relative;
+z-index: 2;
+/* ENHANCED: Multi-layer background */
+background: linear-gradient(135deg, 
+rgba(var(--accent-color), 0.12) 0%, 
+rgba(var(--accent-color), 0.06) 50%,
+rgba(var(--accent-color), 0.03) 100%
+);
+border-radius: var(--radius-md);
+backdrop-filter: blur(5px);
+border: 1px solid rgba(var(--accent-color), 0.2);
+}
+
+.nutrition-icon {
+font-size: 2.8rem;
+padding: var(--space-3);
+border-radius: var(--radius-lg);
+display: flex;
+align-items: center;
+justify-content: center;
+min-width: 64px;
+height: 64px;
+/* ENHANCED: Multi-layer icon styling */
+background: linear-gradient(135deg, 
+rgba(var(--accent-color), 0.2) 0%, 
+rgba(var(--accent-color), 0.3) 50%,
+rgba(var(--accent-color), 0.25) 100%
+);
+border: 3px solid rgba(var(--accent-color), 0.5);
+box-shadow: 0 4px 12px rgba(var(--accent-color), 0.3), 
+inset 0 2px 4px rgba(255, 255, 255, 0.2);
+flex-shrink: 0;
+transition: all var(--duration-normal) var(--ease-bounce);
+}
+
+.nutrition-icon:hover {
+transform: scale(1.1) rotate(5deg);
+box-shadow: 0 6px 20px rgba(var(--accent-color), 0.4);
+}
+
+.nutrition-info {
+flex: 1;
+min-width: 0;
+}
+
+.nutrition-name {
+font-size: var(--font-size-xl);
+font-weight: var(--font-weight-bold);
+color: var(--color-slate-900);
+margin-bottom: var(--space-2);
+line-height: var(--line-height-tight);
+text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.nutrition-type {
+font-size: var(--font-size-sm);
+color: var(--color-slate-500);
+font-weight: var(--font-weight-semibold);
+text-transform: uppercase;
+letter-spacing: 0.5px;
+/* ENHANCED: Badge-style type indicator */
+background: linear-gradient(135deg, 
+rgba(var(--accent-color), 0.15) 0%, 
+rgba(var(--accent-color), 0.1) 100%
+);
+padding: var(--space-1) var(--space-3);
+border-radius: var(--radius-base);
+border: 1px solid rgba(var(--accent-color), 0.3);
+display: inline-block;
+}
+
+.nutrition-function {
+font-size: var(--font-size-sm);
+color: var(--color-slate-500);
+margin-bottom: var(--space-4);
+line-height: var(--line-height-normal);
+padding: var(--space-4);
+flex-grow: 1;
+position: relative;
+z-index: 2;
+/* ENHANCED: Rich background with subtle pattern */
+background: linear-gradient(135deg, 
+rgba(var(--accent-color), 0.04) 0%, 
+rgba(var(--accent-color), 0.02) 100%
+);
+border-radius: var(--radius-md);
+border: 1px solid rgba(var(--accent-color), 0.1);
+}
+
+.food-sources {
+padding: 0 var(--space-4) var(--space-4);
+display: flex;
+flex-direction: column;
+gap: var(--space-4);
+position: relative;
+z-index: 2;
+}
+
+.source-group {
+display: flex;
+flex-direction: column;
+gap: var(--space-2);
+/* ENHANCED: Rich group styling with borders */
+background: linear-gradient(135deg, 
+rgba(var(--accent-color), 0.06) 0%, 
+rgba(var(--accent-color), 0.03) 100%
+);
+padding: var(--space-4);
+border-radius: var(--radius-md);
+border-left: 4px solid rgba(var(--accent-color), 0.4);
+border: 1px solid rgba(var(--accent-color), 0.15);
+}
+
+.source-group h4 {
+font-size: var(--font-size-md);
+font-weight: var(--font-weight-bold);
+color: var(--color-slate-900);
+display: flex;
+align-items: center;
+gap: var(--space-2);
+}
+
+.source-list {
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-2);
+}
+
+.food-tag {
+/* ENHANCED: Rich gradient food tags with hover effects */
+background: linear-gradient(135deg, 
+rgba(var(--accent-color), 0.15) 0%, 
+rgba(var(--accent-color), 0.1) 50%,
+rgba(var(--accent-color), 0.12) 100%
+);
+color: var(--color-slate-900);
+padding: var(--space-2) var(--space-3);
+border-radius: var(--radius-base);
+font-size: var(--font-size-xs);
+font-weight: var(--font-weight-semibold);
+border: 2px solid rgba(var(--accent-color), 0.3);
+white-space: nowrap;
+transition: all var(--duration-fast) var(--ease-bounce);
+cursor: pointer;
+}
+
+.food-tag:hover {
+background: linear-gradient(135deg, 
+rgba(var(--accent-color), 0.25) 0%, 
+rgba(var(--accent-color), 0.2) 50%,
+rgba(var(--accent-color), 0.18) 100%
+);
+transform: translateY(-2px) scale(1.05);
+box-shadow: 0 4px 8px rgba(var(--accent-color), 0.2);
+border-color: rgba(var(--accent-color), 0.5);
+}
+
+/* Matched/Unmatched overrides - MAINTAINED */
+.vitamin-card.matched .food-tag,
+.vitamin-card.unmatched .food-tag,
+.mineral-card.matched .food-tag,
+.mineral-card.unmatched .food-tag {
+background: rgba(255, 255, 255, 0.2) !important;
+color: white !important;
+border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.vitamin-card.matched .nutrition-icon,
+.vitamin-card.unmatched .nutrition-icon,
+.mineral-card.matched .nutrition-icon,
+.mineral-card.unmatched .nutrition-icon {
+background: rgba(255, 255, 255, 0.2) !important;
+border-color: rgba(255, 255, 255, 0.3) !important;
+box-shadow: none !important;
+}
+
+.vitamin-card.matched .nutrition-header,
+.vitamin-card.unmatched .nutrition-header,
+.mineral-card.matched .nutrition-header,
+.mineral-card.unmatched .nutrition-header {
+background: rgba(255, 255, 255, 0.1) !important;
+border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.vitamin-card.matched .nutrition-function,
+.vitamin-card.unmatched .nutrition-function,
+.mineral-card.matched .nutrition-function,
+.mineral-card.unmatched .nutrition-function {
+background: rgba(255, 255, 255, 0.05) !important;
+border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.vitamin-card.matched .source-group,
+.vitamin-card.unmatched .source-group,
+.mineral-card.matched .source-group,
+.mineral-card.unmatched .source-group {
+background: rgba(255, 255, 255, 0.1) !important;
+border-left-color: rgba(255, 255, 255, 0.3) !important;
+border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Footer */
+.footer {
+background: linear-gradient(135deg, 
+var(--color-card-light) 0%, 
+rgba(255, 255, 255, 0.9) 100%
+);
+border-top: 2px solid var(--color-card-border);
+padding: var(--space-8) 0;
+text-align: center;
+margin-top: var(--space-8);
+box-shadow: var(--shadow-md);
+}
+
+.footer p {
+color: var(--color-slate-500);
+font-size: var(--font-size-md);
+font-weight: var(--font-weight-medium);
+}
+
+/* ===================================
+RESPONSIVE DESIGN - ENHANCED
+=================================== */
+
+@media (max-width: 479px) {
+.nutrition-grid {
+grid-template-columns: 1fr;
+gap: var(--space-5);
+}
+
+.vitamin-card,
+.mineral-card {
+min-height: 360px;
+max-height: 360px;
+}
+
+.nutrition-header {
+flex-direction: column;
+text-align: center;
+gap: var(--space-3);
+}
+
+.nutrition-icon {
+margin: 0 auto;
+}
+
+.button-group {
+flex-direction: column;
+gap: var(--space-3);
+}
+
+.btn {
+min-width: 100%;
+}
+
+.coverage-details {
+flex-direction: column;
+gap: var(--space-4);
+}
+
+.container {
+padding: 0 var(--space-2);
+}
+
+.controls-section {
+padding: var(--space-6);
+}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+.nutrition-grid {
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: var(--space-5);
+}
+
+.vitamin-card,
+.mineral-card {
+min-height: 370px;
+max-height: 370px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+.nutrition-grid {
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: var(--space-6);
+}
+
+.vitamin-card,
+.mineral-card {
+min-height: 380px;
+max-height: 380px;
+}
+}
+
+@media (min-width: 1024px) {
+.nutrition-grid {
+grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+gap: var(--space-6);
+}
+
+.container {
+padding: 0 var(--space-6);
+}
+}
+
+@media (min-width: 1200px) {
+.nutrition-grid {
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+gap: var(--space-8);
+}
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visible { display: block !important; }
+.fade-in {
+animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced Notification styles */
+.notification {
+position: fixed;
+top: 20px;
+right: 20px;
+padding: var(--space-4) var(--space-5);
+border-radius: var(--radius-lg);
+color: white;
+font-weight: var(--font-weight-semibold);
+font-size: var(--font-size-md);
+z-index: 1000;
+opacity: 0;
+transform: translateX(100%);
+transition: all var(--duration-normal) var(--ease-bounce);
+max-width: 320px;
+box-shadow: var(--shadow-xl);
+}
+
+.notification--success { 
+background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%); 
+}
+.notification--error { 
+background: linear-gradient(135deg, var(--color-error) 0%, #DC2626 100%); 
+}
+.notification--warning { 
+background: linear-gradient(135deg, var(--color-yellow-primary) 0%, var(--color-yellow-accent) 100%); 
+}
+.notification--info { 
+background: linear-gradient(135deg, var(--color-blue-primary) 0%, var(--color-blue-accent) 100%); 
+}
